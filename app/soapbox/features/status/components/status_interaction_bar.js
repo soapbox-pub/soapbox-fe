@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import ImmutablePureComponent from 'react-immutable-pure-component';
 import { connect } from 'react-redux';
 import { FormattedNumber } from 'react-intl';
-import emojify from 'soapbox/features/emoji/emoji';
+import Emoji from 'soapbox/features/emoji/components/emoji';
 import { reduceEmoji } from 'soapbox/utils/emoji_reacts';
 import SoapboxPropTypes from 'soapbox/utils/soapbox_prop_types';
 import { getFeatures } from 'soapbox/utils/features';
@@ -73,10 +73,9 @@ class StatusInteractionBar extends ImmutablePureComponent {
             {emojiReacts.map((e, i) => {
               const emojiReact = (
                 <>
-                  <span
-                    className='emoji-react__emoji'
-                    dangerouslySetInnerHTML={{ __html: emojify(e.get('name')) }}
-                  />
+                  <span className='emoji-react__emoji'>
+                    <Emoji emoji={e.get('name')} />
+                  </span>
                   <span className='emoji-react__count'>{e.get('count')}</span>
                 </>
               );

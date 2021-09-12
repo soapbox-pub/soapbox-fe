@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { HotKeys } from 'react-hotkeys';
 import ImmutablePureComponent from 'react-immutable-pure-component';
 import { connect } from 'react-redux';
-import emojify from 'soapbox/features/emoji/emoji';
+import Emoji from 'soapbox/features/emoji/components/emoji';
 import { getSoapboxConfig } from 'soapbox/actions/soapbox';
 import classNames from 'classnames';
 
@@ -109,11 +109,12 @@ class EmojiSelector extends ImmutablePureComponent {
             <button
               key={i}
               className='emoji-react-selector__emoji'
-              dangerouslySetInnerHTML={{ __html: emojify(emoji) }}
               onClick={this.handleReact(emoji)}
               onKeyDown={this.handleKeyDown(i, emoji)}
               tabIndex={(visible || focused) ? 0 : -1}
-            />
+            >
+              <Emoji emoji={emoji} />
+            </button>
           ))}
         </div>
       </HotKeys>

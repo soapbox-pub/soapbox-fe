@@ -12,7 +12,7 @@ import RelativeTimestamp from './relative_timestamp';
 import { defineMessages, injectIntl } from 'react-intl';
 import ImmutablePureComponent from 'react-immutable-pure-component';
 import classNames from 'classnames';
-import emojify from 'soapbox/features/emoji/emoji';
+import Emoji from 'soapbox/features/emoji/components/emoji';
 
 const messages = defineMessages({
   follow: { id: 'account.follow', defaultMessage: 'Follow' },
@@ -133,10 +133,9 @@ class Account extends ImmutablePureComponent {
 
     if (reaction) {
       emoji = (
-        <span
-          className='emoji-react__emoji'
-          dangerouslySetInnerHTML={{ __html: emojify(reaction) }}
-        />
+        <span className='emoji-react__emoji'>
+          <Emoji emoji={emoji} />
+        </span>
       );
     }
 

@@ -10,6 +10,7 @@ import { HotKeys } from 'react-hotkeys';
 import FollowRequestContainer from '../containers/follow_request_container';
 import Icon from 'soapbox/components/icon';
 import emojify from 'soapbox/features/emoji/emoji';
+import Emoji from 'soapbox/features/emoji/components/emoji';
 import classNames from 'classnames';
 
 const notificationForScreenReader = (intl, message, timestamp) => {
@@ -201,7 +202,9 @@ class Notification extends ImmutablePureComponent {
         <div className='notification notification-emoji-react focusable' tabIndex='0' aria-label={notificationForScreenReader(intl, intl.formatMessage({ id: 'notification.pleroma:emoji_reaction', defaultMessage: '{name} reacted to your post' }, { name: notification.getIn(['account', 'acct']) }), notification.get('created_at'))}>
           <div className='notification__message'>
             <div className='notification__favourite-icon-wrapper'>
-              <span dangerouslySetInnerHTML={{ __html: emojify(emojify(notification.get('emoji'))) }} />
+              <span>
+                <Emoji emoji={notification.get('emoji')} />
+              </span>
             </div>
 
             <span title={notification.get('created_at')}>

@@ -4,7 +4,7 @@ import spring from 'react-motion/lib/spring';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Icon from 'soapbox/components/icon';
-import emojify from 'soapbox/features/emoji/emoji';
+import Emoji from 'soapbox/features/emoji/components/emoji';
 
 export default class IconButton extends React.PureComponent {
 
@@ -134,9 +134,13 @@ export default class IconButton extends React.PureComponent {
           disabled={disabled}
         >
           <div style={style}>
-            {emoji
-              ? <div className='icon-button__emoji' dangerouslySetInnerHTML={{ __html: emojify(emoji) }} aria-hidden='true' />
-              : <Icon id={icon} fixedWidth aria-hidden='true' />}
+            {emoji ? (
+              <div className='icon-button__emoji' aria-hidden='true'>
+                <Emoji emoji={emoji} />
+              </div>
+            ) : (
+              <Icon id={icon} fixedWidth aria-hidden='true' />
+            )}
           </div>
           {text && <span className='icon_button__text'>{text}</span>}
         </button>
@@ -163,9 +167,13 @@ export default class IconButton extends React.PureComponent {
             disabled={disabled}
           >
             <div style={style}>
-              {emoji
-                ? <div className='icon-button__emoji' style={{ transform: `rotate(${rotate}deg)` }} dangerouslySetInnerHTML={{ __html: emojify(emoji) }} aria-hidden='true' />
-                : <Icon id={icon} style={{ transform: `rotate(${rotate}deg)` }} fixedWidth aria-hidden='true' />}
+              {emoji ? (
+                <div className='icon-button__emoji' style={{ transform: `rotate(${rotate}deg)` }} aria-hidden='true'>
+                  <Emoji emoji={emoji} />
+                </div>
+              ) : (
+                <Icon id={icon} style={{ transform: `rotate(${rotate}deg)` }} fixedWidth aria-hidden='true' />
+              )}
             </div>
             {text && <span className='icon_button__text'>{text}</span>}
           </button>
