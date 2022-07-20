@@ -15,10 +15,9 @@ import { getAcct } from 'soapbox/utils/accounts';
 import { displayFqn as getDisplayFqn } from 'soapbox/utils/state';
 
 import ChatBox from './chat-box';
+import { Pane, WindowState } from './ui';
 
 import type { Account as AccountEntity } from 'soapbox/types/entities';
-
-type WindowState = 'open' | 'minimized';
 
 const getChat = makeGetChat();
 
@@ -72,8 +71,6 @@ const ChatWindow: React.FC<IChatWindow> = ({ idx, chatId, windowState }) => {
 
   if (!chat) return null;
   const account = chat.account as unknown as AccountEntity;
-
-  const right = (285 * (idx + 1)) + 20;
   const unreadCount = chat.unread;
 
   const unreadIcon = (
@@ -91,7 +88,7 @@ const ChatWindow: React.FC<IChatWindow> = ({ idx, chatId, windowState }) => {
   );
 
   return (
-    <div className={`pane pane--${windowState}`} style={{ right: `${right}px` }}>
+    <Pane windowState={windowState} index={idx}>
       <HStack space={2} className='pane__header'>
         {unreadCount > 0 ? unreadIcon : avatar }
         <button className='pane__title' onClick={handleChatToggle(chat.id)}>
@@ -107,7 +104,7 @@ const ChatWindow: React.FC<IChatWindow> = ({ idx, chatId, windowState }) => {
           onSetInputRef={handleInputRef}
         />
       </div>
-    </div>
+    </Pane>
   );
 };
 

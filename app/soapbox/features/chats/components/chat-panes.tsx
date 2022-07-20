@@ -15,6 +15,7 @@ import { Chat } from 'soapbox/types/entities';
 
 import ChatList from './chat-list';
 import ChatWindow from './chat-window';
+import { Pane, WindowState } from './ui';
 
 const messages = defineMessages({
   searchPlaceholder: { id: 'chats.search_placeholder', defaultMessage: 'Start a chat with…' },
@@ -43,7 +44,7 @@ const ChatPanes = () => {
   const history = useHistory();
 
   const panes = useAppSelector((state) => normalizeChatPanes(state));
-  const mainWindowState = useSettings().getIn(['chats', 'mainWindow']);
+  const mainWindowState = useSettings().getIn(['chats', 'mainWindow']) as WindowState;
   const unreadCount = useAppSelector((state) => getChatsUnreadCount(state));
 
   const handleClickChat = ((chat: Chat) => {
@@ -61,7 +62,7 @@ const ChatPanes = () => {
   const open = mainWindowState === 'open';
 
   const mainWindowPane = (
-    <div className={`pane pane--main pane--${mainWindowState}`}>
+    <Pane windowState={mainWindowState} index={0} main>
       <div className='pane__header'>
         {unreadCount > 0 && (
           <div className='mr-2 flex-none'>
@@ -87,7 +88,7 @@ const ChatPanes = () => {
           </>
         )}
       </div>
-    </div>
+    </Pane>
   );
 
   return (
@@ -95,7 +96,7 @@ const ChatPanes = () => {
       {mainWindowPane}
       {panes.map((pane, i) => (
         <ChatWindow
-          idx={i}
+          idx={i + 1}
           key={pane.get('chat_id')}
           chatId={pane.get('chat_id')}
           windowState={pane.get('state')}
