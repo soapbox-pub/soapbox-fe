@@ -27,7 +27,7 @@ const getChatsUnreadCount = (state: RootState) => {
 };
 
 // Filter out invalid chats
-const normalizePanes = (chats: Immutable.Map<string, Chat>, panes = ImmutableList<ImmutableMap<string, any>>()) => (
+const normalizePanes = (chats: ImmutableMap<string, Chat>, panes = ImmutableList<ImmutableMap<string, any>>()) => (
   panes.filter(pane => chats.get(pane.get('chat_id')))
 );
 

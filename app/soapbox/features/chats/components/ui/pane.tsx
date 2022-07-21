@@ -17,11 +17,14 @@ interface IPane {
 
 /** Chat pane UI component for desktop. */
 const Pane: React.FC<IPane> = ({ windowState, index, children, main = false }) => {
-  const right = (285 * index) + 20;
+  const right = (404 * index) + 20;
 
   return (
     <div
-      className={classNames(`pane pane--${windowState}`, { 'pane--main': main })}
+      className={classNames('pane', {
+        'pane--main': main,
+        'h-14': windowState === 'minimized',
+      })}
       style={{ right: `${right}px` }}
     >
       {children}
