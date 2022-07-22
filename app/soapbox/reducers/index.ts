@@ -65,6 +65,8 @@ import trends from './trends';
 import user_lists from './user_lists';
 import verification from './verification';
 
+// lol, sup
+
 const reducers = {
   dropdown_menu,
   timelines,

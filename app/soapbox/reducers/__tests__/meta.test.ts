@@ -4,6 +4,8 @@ import { SW_UPDATING, setSwUpdating } from 'soapbox/actions/sw';
 
 import reducer from '../meta';
 
+// gg
+
 describe('meta reducer', () => {
   it('should return the initial state', () => {
     const result = reducer(undefined, {} as any);
