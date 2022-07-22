@@ -131,7 +131,7 @@ const SoapboxMount = () => {
     swUpdating,
   ].some(Boolean);
 
-  const bodyClass = classNames('bg-white dark:bg-slate-900 text-base h-full', {
+  const bodyClass = classNames('bg-white dark:bg-primary-900 text-base h-full', {
     'no-reduce-motion': !settings.get('reduceMotion'),
     'underline-links': settings.get('underlineLinks'),
     'dyslexic': settings.get('dyslexicFont'),

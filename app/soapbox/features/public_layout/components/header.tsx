@@ -109,7 +109,7 @@ const Header = () => {
               </HStack>
 
               <HStack space={2} className='xl:hidden shrink-0'>
-                <Button to='/login' theme='secondary'>
+                <Button to='/login' theme='tertiary'>
                   {intl.formatMessage(messages.login)}
                 </Button>
 

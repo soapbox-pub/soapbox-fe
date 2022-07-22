@@ -36,7 +36,7 @@ const LandingPageModal: React.FC<ILandingPageModal> = ({ onClose }) => {
       title={<SiteLogo alt='Logo' className='h-6 w-auto cursor-pointer' />}
       onClose={() => onClose('LANDING_PAGE')}
     >
-      <div className='mt-4 divide-y divide-solid divide-gray-200 dark:divide-slate-700'>
+      <div className='mt-4 divide-y divide-solid divide-gray-200 dark:divide-gray-800'>
         {links.get('help') && (
           <nav className='grid gap-y-8 mb-6'>
             <a
@@ -59,7 +59,7 @@ const LandingPageModal: React.FC<ILandingPageModal> = ({ onClose }) => {
             'grid-cols-1': !isOpen,
           })}
         >
-          <Button to='/login' theme='secondary' block>
+          <Button to='/login' theme='tertiary' block>
             {intl.formatMessage(messages.login)}
           </Button>
 

@@ -31,48 +31,48 @@ const Developers = () => {
   return (
     <Column label={intl.formatMessage(messages.heading)}>
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2'>
-        <Link to='/developers/apps/create' className='bg-gray-200 dark:bg-gray-600 p-4 rounded flex flex-col items-center justify-center space-y-2 hover:-translate-y-1 transition-transform'>
-          <SvgIcon src={require('@tabler/icons/apps.svg')} className='dark:text-gray-100' />
+        <Link to='/developers/apps/create' className='bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-800/75 p-4 rounded flex flex-col items-center justify-center space-y-2'>
+          <SvgIcon src={require('@tabler/icons/apps.svg')} className='text-gray-700 dark:text-gray-600' />
 
           <Text>
             <FormattedMessage id='developers.navigation.app_create_label' defaultMessage='Create an app' />
           </Text>
         </Link>
 
-        <Link to='/developers/settings_store' className='bg-gray-200 dark:bg-gray-600 p-4 rounded flex flex-col items-center justify-center space-y-2 hover:-translate-y-1 transition-transform'>
-          <SvgIcon src={require('@tabler/icons/code-plus.svg')} className='dark:text-gray-100' />
+        <Link to='/developers/settings_store' className='bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-800/75 p-4 rounded flex flex-col items-center justify-center space-y-2'>
+          <SvgIcon src={require('@tabler/icons/code-plus.svg')} className='text-gray-700 dark:text-gray-600' />
 
           <Text>
             <FormattedMessage id='developers.navigation.settings_store_label' defaultMessage='Settings store' />
           </Text>
         </Link>
 
-        <Link to='/developers/timeline' className='bg-gray-200 dark:bg-gray-600 p-4 rounded flex flex-col items-center justify-center space-y-2 hover:-translate-y-1 transition-transform'>
-          <SvgIcon src={require('@tabler/icons/home.svg')} className='dark:text-gray-100' />
+        <Link to='/developers/timeline' className='bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-800/75 p-4 rounded flex flex-col items-center justify-center space-y-2'>
+          <SvgIcon src={require('@tabler/icons/home.svg')} className='text-gray-700 dark:text-gray-600' />
 
           <Text>
             <FormattedMessage id='developers.navigation.test_timeline_label' defaultMessage='Test timeline' />
           </Text>
         </Link>
 
-        <Link to='/error' className='bg-gray-200 dark:bg-gray-600 p-4 rounded flex flex-col items-center justify-center space-y-2 hover:-translate-y-1 transition-transform'>
-          <SvgIcon src={require('@tabler/icons/mood-sad.svg')} className='dark:text-gray-100' />
+        <Link to='/error' className='bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-800/75 p-4 rounded flex flex-col items-center justify-center space-y-2'>
+          <SvgIcon src={require('@tabler/icons/mood-sad.svg')} className='text-gray-700 dark:text-gray-600' />
 
           <Text>
             <FormattedMessage id='developers.navigation.intentional_error_label' defaultMessage='Trigger an error' />
           </Text>
         </Link>
 
-        <Link to='/error/network' className='bg-gray-200 dark:bg-gray-600 p-4 rounded flex flex-col items-center justify-center space-y-2 hover:-translate-y-1 transition-transform'>
-          <SvgIcon src={require('@tabler/icons/refresh.svg')} className='dark:text-gray-100' />
+        <Link to='/error/network' className='bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-800/75 p-4 rounded flex flex-col items-center justify-center space-y-2'>
+          <SvgIcon src={require('@tabler/icons/refresh.svg')} className='text-gray-700 dark:text-gray-600' />
 
           <Text>
             <FormattedMessage id='developers.navigation.network_error_label' defaultMessage='Network error' />
           </Text>
         </Link>
 
-        <button onClick={leaveDevelopers} className='bg-gray-200 dark:bg-gray-600 p-4 rounded flex flex-col items-center justify-center space-y-2 hover:-translate-y-1 transition-transform'>
-          <SvgIcon src={require('@tabler/icons/logout.svg')} className='dark:text-gray-100' />
+        <button onClick={leaveDevelopers} className='bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-800/75 p-4 rounded flex flex-col items-center justify-center space-y-2'>
+          <SvgIcon src={require('@tabler/icons/logout.svg')} className='text-gray-700 dark:text-gray-600' />
 
           <Text>
             <FormattedMessage id='developers.navigation.leave_developers_label' defaultMessage='Leave developers' />

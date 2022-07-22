@@ -1,7 +1,7 @@
 const { parseColorMatrix } = require('./tailwind/colors');
 
 module.exports = {
-  content: ['./app/**/*.{html,js,ts,tsx}', './custom/instance/**/*.html'],
+  content: ['./app/**/*.{html,js,ts,tsx}', './custom/instance/**/*.html', './app/index.ejs'],
   darkMode: 'class',
   theme: {
     screens: {
@@ -11,9 +11,6 @@ module.exports = {
       xl: '1280px',
     },
     extend: {
-      fontSize: {
-        base: '0.9375rem',
-      },
       fontFamily: {
         'sans': [
           'Inter',
@@ -38,9 +35,11 @@ module.exports = {
         // Colors are configured at runtime with CSS variables in soapbox.json
         gray: [50, 100, 200, 300, 400, 500, 600, 700, 800, 900],
         primary: [50, 100, 200, 300, 400, 500, 600, 700, 800, 900],
+        secondary: [100, 200, 300, 400, 500, 600],
         success: [50, 100, 200, 300, 400, 500, 600, 700, 800, 900],
         danger: [50, 100, 200, 300, 400, 500, 600, 700, 800, 900],
         accent: [300, 500],
+        'accent-blue': true,
         'gradient-start': true,
         'gradient-end': true,
         'sea-blue': true,

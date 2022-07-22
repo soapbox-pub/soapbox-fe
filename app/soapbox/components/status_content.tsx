@@ -46,7 +46,7 @@ const SpoilerButton: React.FC<ISpoilerButton> = ({ onClick, hidden, tabIndex }) 
     tabIndex={tabIndex}
     className={classNames(
       'inline-block rounded-md px-1.5 py-0.5 ml-[0.5em]',
-      'text-black dark:text-white',
+      'text-gray-900 dark:text-gray-100',
       'font-bold text-[11px] uppercase',
       'bg-primary-100 dark:bg-primary-900',
       'hover:bg-primary-300 dark:hover:bg-primary-600',

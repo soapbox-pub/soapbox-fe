@@ -94,7 +94,7 @@ const AvatarSelectionStep = ({ onNext }: { onNext: () => void }) => {
                 )}
 
                 {isSubmitting && (
-                  <div className='absolute inset-0 rounded-full flex justify-center items-center bg-white/80'>
+                  <div className='absolute inset-0 rounded-full flex justify-center items-center bg-white/80 dark:bg-primary-900/80'>
                     <Spinner withText={false} />
                   </div>
                 )}
@@ -103,7 +103,7 @@ const AvatarSelectionStep = ({ onNext }: { onNext: () => void }) => {
                   onClick={openFilePicker}
                   type='button'
                   className={classNames({
-                    'absolute bottom-3 right-2 p-1 bg-primary-600 rounded-full ring-2 ring-white dark:ring-slate-800 hover:bg-primary-700': true,
+                    'absolute bottom-3 right-2 p-1 bg-primary-600 rounded-full ring-2 ring-white dark:ring-primary-900 hover:bg-primary-700': true,
                     'opacity-50 pointer-events-none': isSubmitting,
                   })}
                   disabled={isSubmitting}
@@ -124,7 +124,7 @@ const AvatarSelectionStep = ({ onNext }: { onNext: () => void }) => {
                 </Button>
 
                 {isDisabled && (
-                  <Button block theme='link' type='button' onClick={onNext}>
+                  <Button block theme='tertiary' type='button' onClick={onNext}>
                     <FormattedMessage id='onboarding.skip' defaultMessage='Skip for now' />
                   </Button>
                 )}

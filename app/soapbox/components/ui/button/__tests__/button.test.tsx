@@ -55,7 +55,7 @@ describe('<Button />', () => {
   });
 
   it('handles Theme properly', () => {
-    render(<Button theme='secondary' />);
+    render(<Button theme='tertiary' />);
 
     expect(screen.getByRole('button')).toHaveClass('bg-primary-100');
   });

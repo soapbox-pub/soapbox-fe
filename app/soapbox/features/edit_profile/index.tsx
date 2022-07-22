@@ -472,7 +472,7 @@ const EditProfile: React.FC = () => {
         )}
 
         <FormActions>
-          <Button to='/settings' theme='ghost'>
+          <Button to='/settings' theme='tertiary'>
             {intl.formatMessage(messages.cancel)}
           </Button>
 
